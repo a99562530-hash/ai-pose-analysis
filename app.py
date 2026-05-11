@@ -18,10 +18,9 @@ uploaded_file = st.file_uploader(
     type=["jpg", "jpeg", "png"]
 )
 
-squat_model = joblib.load("/content/drive/MyDrive/squat_pose_model.pkl")
-lunge_model = joblib.load("/content/drive/MyDrive/lunge_pose_model.pkl")
-deadlift_model = joblib.load("/content/drive/MyDrive/deadlift_model.pkl")
-dumbbellrow_model = tf.keras.models.load_model("/content/drive/MyDrive/dumbbellrow_cnn_model.h5")
+joblib.load("squat_pose_model.pkl")
+joblib.load("lunge_pose_model.pkl")
+joblib.load("deadlift_model.pkl")
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert("RGB")
