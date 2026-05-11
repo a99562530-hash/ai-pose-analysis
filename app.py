@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 from PIL import Image
 import random
-import tensorflow as tf
+
 
 st.title("AI 운동 자세 분석")
 
