@@ -4,7 +4,17 @@ import joblib
 import numpy as np
 from PIL import Image
 import random
+import random
 
+st.set_page_config(page_title="AI 운동 자세 분석", layout="centered")
+
+st.markdown("""
+<style>
+...
+</style>
+""", unsafe_allow_html=True)
+
+st.title("AI 운동 자세 분석")
 
 st.title("AI 운동 자세 분석")
 
