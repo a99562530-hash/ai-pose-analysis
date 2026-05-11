@@ -61,10 +61,10 @@ if uploaded_file is not None:
         good_percent = proba[1] * 100
 
     if good_percent >= bad_percent:
-        st.success(f"GOOD {exercise} 자세")
+        st.markdown(f'<p class="good">GOOD {exercise} 자세</p>', unsafe_allow_html=True)
         feedback = "좋은 자세입니다. 자세 균형이 안정적입니다."
     else:
-        st.error(f"BAD {exercise} 자세")
+        st.markdown(f'<p class="bad">BAD {exercise} 자세</p>', unsafe_allow_html=True)
         feedback = "자세 교정이 필요합니다. 무릎, 허리, 상체 균형을 확인하세요."
 
     st.subheader("분석 결과")
