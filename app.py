@@ -66,16 +66,26 @@ if uploaded_file is not None:
     else:
         st.markdown(f'<p class="bad">BAD {exercise} 자세</p>', unsafe_allow_html=True)
         feedback = "자세 교정이 필요합니다. 무릎, 허리, 상체 균형을 확인하세요."
+st.markdown('<div class="result-box">', unsafe_allow_html=True)
 
-    st.subheader("분석 결과")
-    st.write(f"GOOD 확률: {good_percent:.2f}%")
-    st.write(f"BAD 확률: {bad_percent:.2f}%")
+if good_percent >= bad_percent:
+    st.markdown(f'<p class="good">GOOD {exercise} 자세</p>', unsafe_allow_html=True)
+else:
+    st.markdown(f'<p class="bad">BAD {exercise} 자세</p>', unsafe_allow_html=True)
 
-    st.subheader("관절 각도")
-    st.write(f"오른쪽 엉덩이 각도: {random.randint(70,130)}°")
-    st.write(f"오른쪽 무릎 각도: {random.randint(70,130)}°")
-    st.write(f"왼쪽 엉덩이 각도: {random.randint(70,130)}°")
-    st.write(f"왼쪽 무릎 각도: {random.randint(70,130)}°")
+st.write(f"GOOD 확률: {good_percent:.2f}%")
+st.write(f"BAD 확률: {bad_percent:.2f}%")
 
-    st.subheader("AI 피드백")
-    st.info(feedback)
+st.write(f"오른쪽 엉덩이 각도: {random.randint(70,130)}")
+st.write(f"오른쪽 무릎 각도: {random.randint(70,130)}")
+st.write(f"왼쪽 엉덩이 각도: {random.randint(70,130)}")
+st.write(f"왼쪽 무릎 각도: {random.randint(70,130)}")
+
+if good_percent >= bad_percent:
+    feedback = "자세가 안정적입니다."
+else:
+    feedback = "무릎과 허리 각도를 조정하세요."
+
+st.write("피드백:", feedback)
+
+st.markdown('</div>', unsafe_allow_html=True)
