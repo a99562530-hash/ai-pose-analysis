@@ -142,10 +142,16 @@ if uploaded_file is not None:
 
     file_type = uploaded_file.name.split(".")[-1].lower()
 
-    if file_type in ["jpg", "jpeg", "png"]:
-        image = Image.open(uploaded_file).convert("RGB")
-        st.image(image, caption="업로드한 사진", use_container_width=True)
-        good_percent, bad_percent = predict_result()
+ if file_type in ["jpg", "jpeg", "png"]:
+    image = Image.open(uploaded_file).convert("RGB")
+
+    st.image(
+        image,
+        caption="업로드한 사진",
+        width=450
+    )
+
+    good_percent, bad_percent = predict_result()
 
     elif file_type == "mp4":
         st.video(uploaded_file)
