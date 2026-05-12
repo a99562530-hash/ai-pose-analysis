@@ -74,15 +74,6 @@ st.markdown("""
     line-height: 1.9;
 }
 
-.feedback {
-    background: #eff6ff;
-    color: #1e3a8a;
-    padding: 18px;
-    border-radius: 18px;
-    font-size: 17px;
-    margin-top: 18px;
-}
-
 [data-testid="stFileUploader"] {
     background: #f8fafc;
     padding: 15px;
@@ -92,7 +83,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------- 메인 컨테이너 ----------------
+# ---------------- 메인 ----------------
 st.markdown('<div class="main-container">', unsafe_allow_html=True)
 
 # ---------------- 상단 소개 ----------------
@@ -133,7 +124,7 @@ with col2:
 
     st.write("GOOD/BAD 확률을 기반으로 자세를 판별합니다.")
     st.write("운동별 관절 각도와 자세 균형을 분석합니다.")
-    st.write("사진 및 영상 업로드 분석을 지원합니다.")
+    st.write("사진 및 영상 업로드를 지원합니다.")
 
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -187,7 +178,7 @@ if uploaded_file is not None:
         st.image(
             image,
             caption="업로드한 사진",
-            width=450
+            width=350
         )
 
         good_percent, bad_percent = predict_result()
@@ -275,15 +266,8 @@ if uploaded_file is not None:
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown(f"""
-    <div class="feedback">
-
-    <b>AI 피드백</b><br><br>
-
-    {feedback}
-
-    </div>
-    """, unsafe_allow_html=True)
+    # ---------------- 피드백 ----------------
+    st.info("AI 피드백\n\n" + feedback)
 
     st.markdown('</div>', unsafe_allow_html=True)
 
