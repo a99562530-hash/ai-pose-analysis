@@ -142,7 +142,10 @@ if uploaded_file is not None:
 
     file_type = uploaded_file.name.split(".")[-1].lower()
 
- if file_type in ["jpg", "jpeg", "png"]:
+
+
+
+if file_type in ["jpg", "jpeg", "png"]:
     image = Image.open(uploaded_file).convert("RGB")
 
     st.image(
