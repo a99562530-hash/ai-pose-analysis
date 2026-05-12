@@ -20,10 +20,9 @@ uploaded_file = st.file_uploader(
     type=["jpg", "jpeg", "png", "mp4"]
 )
 
-squat_model = joblib.load("/content/drive/MyDrive/squat_pose_model.pkl")
-lunge_model = joblib.load("/content/drive/MyDrive/lunge_pose_model.pkl")
-deadlift_model = joblib.load("/content/drive/MyDrive/deadlift_model.pkl")
-
+squat_model = joblib.load("squat_pose_model.pkl")
+lunge_model = joblib.load("lunge_pose_model.pkl")
+deadlift_model = joblib.load("deadlift_model.pkl")
 def predict_result():
     if exercise == "스쿼트":
         model = squat_model
