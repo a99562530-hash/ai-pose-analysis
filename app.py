@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ---------------- CSS 디자인 ----------------
+# ---------------- CSS ----------------
 st.markdown("""
 <style>
 
@@ -141,6 +141,7 @@ with col2:
 squat_model = joblib.load("squat_pose_model.pkl")
 lunge_model = joblib.load("lunge_pose_model.pkl")
 deadlift_model = joblib.load("deadlift_model.pkl")
+
 # ---------------- 예측 함수 ----------------
 def predict_result():
 
@@ -233,7 +234,7 @@ if uploaded_file is not None:
 
             good_percent, bad_percent = predict_result()
 
-    # ---------------- 결과 판별 ----------------
+    # ---------------- 결과 ----------------
     if good_percent >= bad_percent:
 
         result_text = f"GOOD {exercise} 자세"
