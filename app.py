@@ -138,10 +138,9 @@ with col2:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------------- 모델 로드 ----------------
-squat_model = joblib.load("/content/drive/MyDrive/squat_pose_model.pkl")
-lunge_model = joblib.load("/content/drive/MyDrive/lunge_pose_model.pkl")
-deadlift_model = joblib.load("/content/drive/MyDrive/deadlift_model.pkl")
-
+squat_model = joblib.load("squat_pose_model.pkl")
+lunge_model = joblib.load("lunge_pose_model.pkl")
+deadlift_model = joblib.load("deadlift_model.pkl")
 # ---------------- 예측 함수 ----------------
 def predict_result():
 
